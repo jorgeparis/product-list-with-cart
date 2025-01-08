@@ -1,0 +1,14 @@
+<img
+  src="./assets/images/image-baklava-desktop.jpg"
+  alt=""
+  class="product-img"
+/>
+<a class="cart-container" href="#">
+  <img src="./assets/images/icon-add-to-cart.svg" alt="" class="cart-img" />
+  <h5 class="add-to-cart-text">Add to cart</h5>
+</a>
+<div class="product-cat-text">
+  <h5 class="product-type">gfgf</h5>
+  <h5>gfgf</h5>
+  <h5 class="product-price">gfgfg</h5>
+</div>

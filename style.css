@@ -1,0 +1,413 @@
+@font-face {
+  font-family: Redhat-Italic;
+  src: url("./assets/fonts/RedHatText-Italic-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Rebhat-Variable;
+  src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Rebhat-Bold;
+  src: url("./assets/fonts/static/RedHatText-Bold.ttf");
+}
+@font-face {
+  font-family: Rebhat-Regular;
+  src: url("./assets/fonts/static/RedHatText-Regular.ttf");
+}
+@font-face {
+  font-family: Rebhat-SemiBold;
+  src: url("./assets/fonts/static/RedHatText-SemiBold.ttf");
+}
+
+body {
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffb3c1;
+}
+
+:root {
+  font-family: Redhat-Regular;
+}
+
+.header {
+  align-self: flex-start;
+}
+.header h1 {
+  font-family: Rebhat-Bold;
+}
+
+/* Divide a pagina em duas secoes uma para os Productos (product-grid) e a seccao onde aparecem os productos adicionados */
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  column-gap: 1em;
+}
+
+/* Todos Productos estao nesse container Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-template-rows: 3fr 3fr 3fr;
+  column-gap: 2em;
+  row-gap: 2em;
+}
+
+/* Container dos Productos, onde considero no Container (Imagem do producto, Texto, Icon de carrinho de Cart) */
+.product {
+  background-color: #ff8fa3;
+  border-style: double;
+  border-color: #ff8fa3;
+  border-width: 1px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.product img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Estilos para o Cart Container onde tenho o carrinho 
+e o texto Add to Cart */
+
+.product .cart-container {
+  position: absolute;
+  text-decoration: none;
+  bottom: 140px;
+  left: 25%;
+  width: 200px;
+  height: 40px;
+  border-style: double;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-radius: 30px;
+  text-align: center;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.cart-container:hover {
+  background-color: #a4133c;
+  border-color: #a4133c;
+  color: aliceblue;
+}
+
+.cart-container img {
+  height: 30px;
+  width: 20px;
+}
+
+/* CART AO LADO COM FUNDO BRANCO */
+.products-cart {
+  background-color: rgb(255, 255, 255);
+  height: 700px;
+  border-style: double;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.product-cat-text {
+  padding: 8px;
+}
+
+.product-cat-text .product-type {
+  color: rgb(127, 128, 129);
+}
+
+.product-cat-text .product-price {
+  color: rgb(243, 13, 13);
+}
+.emppty-cart {
+}
+
+.cart-with-productos {
+  width: 100%;
+  align-self: flex-start;
+  padding: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2em;
+}
+.items-selected {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items-selected img {
+  margin: 8px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: #b1aeae;
+  border-style: groove;
+  justify-self: flex-end;
+}
+
+.items {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.items-number {
+  display: flex;
+
+  gap: 2em;
+}
+
+.items-number a {
+  text-decoration: none;
+}
+
+.confirm-order-btn {
+  height: 40px;
+  width: 250px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #a4133c;
+  color: aliceblue;
+
+  border-radius: 20px;
+}
+
+.hidden-container {
+  display: none;
+}
+
+
+
+/* VERSAO MOBILE DA APP
+*/
+
+.product-container-mobile {
+  padding: 8px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d3d1d1;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+
+.product-mobile {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  border-style: groove;
+  position: relative;
+  border-radius: 10px;
+  border-color: #585455;
+  border-width: 1px;
+}
+
+.product-mobile img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.product-mobile a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: aliceblue;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  bottom: 120px;
+  position: absolute;
+  gap: 2em;
+}
+
+.product-mobile a img {
+  width: 20px;
+  height: 20px;
+}
+
+.mobile-text-container{
+  padding: 8px;
+  align-self: flex-start;
+}
+
+/* Aqui vamos usar media queries para mudar entre mobile e desckopt */
+.mobile{
+  display: none;
+}
+
+@media (max-width:430px){
+
+  .desktop{
+
+    display: none;
+  }
+  .mobile{
+    display: flex;
+  }
+  .product-mobile a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: aliceblue;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    bottom: 130px;
+    position: absolute;
+    gap: 2em;
+  }
+  body {
+   
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff0331;
+  }
+  
+  
+}
+
+
+@media (max-width:390px){
+
+  .desktop{
+
+    display: none;
+  }
+  .mobile{
+    display: flex;
+    
+
+  }
+  .product-mobile a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: aliceblue;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    bottom: 60px;
+    position: absolute;
+    gap: 2em;
+  }
+  body {
+   
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  
+  
+}
+
+
+
+
+
+@media (max-width:877px){
+
+  .desktop{
+
+    display: none;
+  }
+  .mobile{
+    display: flex;
+  }
+  body {
+   
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #f50e38;
+  }
+  
+  
+}
+
+@media (max-width:360px){
+
+  .desktop{
+
+    display: none;
+  }
+  .mobile{
+    display: flex;
+  }
+  .product-mobile a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: aliceblue;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    bottom: 90px;
+    position: absolute;
+    gap: 2em;
+  }
+  .mobile-text-container{
+    padding: 8px;
+    height: 150px;
+    align-self: flex-start;
+  }
+  body {
+   
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff0331;
+  }
+  
+  
+}
+
+
+/* MODAL STYLING
+*/
