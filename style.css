@@ -135,7 +135,8 @@ e o texto Add to Cart */
 }
 
 .product-cat-text .product-price {
-  color: rgb(243, 13, 13);
+  color: rgb(255, 255, 255);
+  font-size: large;
 }
 .emppty-cart {
 }
@@ -296,7 +297,7 @@ e o texto Add to Cart */
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    background-color: #ff0331;
+    
   }
   
   
@@ -361,7 +362,7 @@ e o texto Add to Cart */
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    background-color: #f50e38;
+    
   }
   
   
@@ -402,7 +403,7 @@ e o texto Add to Cart */
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    background-color: #ff0331;
+    
   }
   
   

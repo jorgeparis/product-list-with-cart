@@ -44,4 +44,6 @@ class="product-img"
          
         </div>`;
     });
+  }).catch((error)=>{
+    console.log(error);
   });
