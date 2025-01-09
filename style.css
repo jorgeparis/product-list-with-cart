@@ -138,8 +138,7 @@ e o texto Add to Cart */
   color: rgb(255, 255, 255);
   font-size: large;
 }
-.emppty-cart {
-}
+
 
 .cart-with-productos {
   width: 100%;
@@ -197,9 +196,14 @@ e o texto Add to Cart */
 
   border-radius: 20px;
 }
+/* CART WITH AND WITHOUT PRODUCTS TOGGLE */
 
-.hidden-container {
+.cart-with-productos {
   display: none;
+}
+
+.emppty-cart {
+
 }
 
 
