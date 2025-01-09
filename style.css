@@ -87,7 +87,7 @@ e o texto Add to Cart */
   text-decoration: none;
   bottom: 140px;
   left: 25%;
-  width: 200px;
+  width: 150px;
   height: 40px;
   border-style: double;
   border-color: rgb(0, 0, 0);
@@ -117,7 +117,7 @@ e o texto Add to Cart */
   background-color: rgb(255, 255, 255);
   height: 700px;
   border-style: double;
-  border-color: rgb(0, 0, 0);
+  border-color: #ff8fa3;
   border-width: 1px;
   border-radius: 30px;
   padding: 10px;
@@ -138,7 +138,6 @@ e o texto Add to Cart */
   color: rgb(255, 255, 255);
   font-size: large;
 }
-
 
 .cart-with-productos {
   width: 100%;
@@ -203,10 +202,7 @@ e o texto Add to Cart */
 }
 
 .emppty-cart {
-
 }
-
-
 
 /* VERSAO MOBILE DA APP
 */
@@ -261,23 +257,21 @@ e o texto Add to Cart */
   height: 20px;
 }
 
-.mobile-text-container{
+.mobile-text-container {
   padding: 8px;
   align-self: flex-start;
 }
 
 /* Aqui vamos usar media queries para mudar entre mobile e desckopt */
-.mobile{
+.mobile {
   display: none;
 }
 
-@media (max-width:430px){
-
-  .desktop{
-
+@media (max-width: 430px) {
+  .desktop {
     display: none;
   }
-  .mobile{
+  .mobile {
     display: flex;
   }
   .product-mobile a {
@@ -296,28 +290,19 @@ e o texto Add to Cart */
     gap: 2em;
   }
   body {
-   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    
   }
-  
-  
 }
 
-
-@media (max-width:390px){
-
-  .desktop{
-
+@media (max-width: 390px) {
+  .desktop {
     display: none;
   }
-  .mobile{
+  .mobile {
     display: flex;
-    
-
   }
   .product-mobile a {
     text-decoration: none;
@@ -335,50 +320,33 @@ e o texto Add to Cart */
     gap: 2em;
   }
   body {
-   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-  
   }
-  
-  
-  
 }
 
-
-
-
-
-@media (max-width:877px){
-
-  .desktop{
-
+@media (max-width: 877px) {
+  .desktop {
     display: none;
   }
-  .mobile{
+  .mobile {
     display: flex;
   }
   body {
-   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    
   }
-  
-  
 }
 
-@media (max-width:360px){
-
-  .desktop{
-
+@media (max-width: 360px) {
+  .desktop {
     display: none;
   }
-  .mobile{
+  .mobile {
     display: flex;
   }
   .product-mobile a {
@@ -396,23 +364,18 @@ e o texto Add to Cart */
     position: absolute;
     gap: 2em;
   }
-  .mobile-text-container{
+  .mobile-text-container {
     padding: 8px;
     height: 150px;
     align-self: flex-start;
   }
   body {
-   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    
   }
-  
-  
 }
-
 
 /* MODAL STYLING
 */

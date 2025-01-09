@@ -97,5 +97,38 @@
         "name": "Vanilla Panna Cotta",
         "category": "Panna Cotta",
         "price": 6.50
+     },
+     {
+        "image": {
+            "thumbnail": "./assets/images/coca-cola.png",
+            "mobile": "./assets/images/coca-cola.png",
+            "tablet": "./assets/images/coca-cola.png",
+            "desktop": "./assets/images/coca-cola.png"
+        },
+        "name": "Coca Cola",
+        "category": "Refrigerante",
+        "price": 6.50
+     },
+     {
+        "image": {
+            "thumbnail": "./assets/images/coca-cola.png",
+            "mobile": "./assets/images/coca-cola.png",
+            "tablet": "./assets/images/coca-cola.png",
+            "desktop": "./assets/images/pork-loin.jpg"
+        },
+        "name": "Coca Cola",
+        "category": "Meat",
+        "price": 5.5
+     },
+     {
+        "image": {
+            "thumbnail": "./assets/images/coca-cola.png",
+            "mobile": "./assets/images/coca-cola.png",
+            "tablet": "./assets/images/coca-cola.png",
+            "desktop": "./assets/images/2M-Embalagem.jpg"
+        },
+        "name": "2M Lata",
+        "category": "Cerveja",
+        "price": 5.5
      }
 ]
