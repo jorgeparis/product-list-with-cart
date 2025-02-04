@@ -130,5 +130,27 @@
     "name": "2M Lata",
     "category": "Cerveja",
     "price": 5.5
+  },
+{
+    "image": {
+      "thumbnail": "./assets/images/pork-loin.jpg",
+      "mobile": "./assets/images/pork-loin.jpg",
+      "tablet": "./assets/images/pork-loin.jpg",
+      "desktop": "./assets/images/pork-loin.jpg"
+    },
+    "name": "Pork Loin",
+    "category": "Meat",
+    "price": 5.5
+  },
+{
+    "image": {
+      "thumbnail": "./assets/images/pork-loin.jpg",
+      "mobile": "./assets/images/pork-loin.jpg",
+      "tablet": "./assets/images/pork-loin.jpg",
+      "desktop": "./assets/images/pork-loin.jpg"
+    },
+    "name": "Pork Loin",
+    "category": "Meat",
+    "price": 5.5
   }
 ]

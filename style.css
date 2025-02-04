@@ -33,6 +33,9 @@ body {
 
 :root {
   font-family: Redhat-Regular;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .header {
@@ -44,19 +47,18 @@ body {
 
 /* Divide a pagina em duas secoes uma para os Productos (product-grid) e a seccao onde aparecem os productos adicionados */
 .main {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 4fr 1fr;
+  height: 50%;
+  width: 100%;
+  display: flex;
   column-gap: 1em;
 }
 
 /* Todos Productos estao nesse container Grid */
 .products-grid {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-rows: 3fr 3fr 3fr;
-  column-gap: 2em;
+  display: flex;
+  flex-flow: row wrap;
   row-gap: 2em;
+  column-gap: 1em;
 }
 
 /* Container dos Productos, onde considero no Container (Imagem do producto, Texto, Icon de carrinho de Cart) */
@@ -67,6 +69,8 @@ body {
   border-width: 1px;
   border-radius: 10px;
   position: relative;
+  max-width: 502px;
+
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -85,8 +89,10 @@ e o texto Add to Cart */
 .product .cart-container {
   position: absolute;
   text-decoration: none;
-  bottom: 140px;
-  left: 25%;
+  bottom: 20%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
   width: 150px;
   height: 40px;
   border-style: double;
@@ -115,6 +121,7 @@ e o texto Add to Cart */
 /* CART AO LADO COM FUNDO BRANCO */
 .products-cart {
   background-color: rgb(255, 255, 255);
+  width: 50%;
   height: 700px;
   border-style: double;
   border-color: #ff8fa3;

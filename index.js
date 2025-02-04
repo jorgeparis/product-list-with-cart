@@ -26,7 +26,7 @@ class="product-img"
 <div class="product-cat-text">
 <h5 class="product-type">${category}</h5>
 <h5>${name}</h5>
-<h5 class="product-price">${price}</h5>
+<h5 class="product-price">${price}, 00 MZN</h5>
 </div>
 </div>`;
 
@@ -39,7 +39,7 @@ class="product-img"
 
             <h5 class="product-mobile-text"> ${category}</h5>
             <h5 class="product-mobile-text"> ${name}</h5>
-            <h5 class="product-mobile-text"> ${price}</h5>
+            <h5 class="product-mobile-text"> $${price}</h5>
           </div>
          
         </div>`;
@@ -113,6 +113,6 @@ document.addEventListener("click", (event) => {
     event.target.matches(".cart-img") ||
     event.target.matches(".add-to-cart-text")
   ) {
-    
+   alert('add product')
   }
 });
