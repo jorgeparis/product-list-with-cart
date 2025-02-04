@@ -50,6 +50,7 @@ body {
   height: 50%;
   width: 100%;
   display: flex;
+ 
   column-gap: 1em;
 }
 
@@ -77,12 +78,51 @@ body {
   justify-content: flex-start;
 }
 
+.product::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, red, blue); /* Gradient for the border */
+  padding: 4px; /* Adjust this to control the border thickness */
+  border-radius: 10px; /* Optional: for rounded corners */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+} 
+
 .product img {
   width: 100%;
   height: 80%;
+  filter: grayscale(0.9);
+  background-image: linear-gradient(rgba(0 0 0 0));
   object-fit: cover;
   border-radius: 10px;
+  transition: filter ease-in-out;
 }
+
+.product img:hover{
+  filter: grayscale(0);
+  animation: animateHover;
+  animation-duration: 3ms;
+
+}
+@keyframes animateHover{
+
+  from {
+    filter: grayscale(0);
+  }
+  to{
+    filter: grayscale(1);
+  }
+
+}
+
+
 /* Estilos para o Cart Container onde tenho o carrinho 
 e o texto Add to Cart */
 
@@ -111,17 +151,22 @@ e o texto Add to Cart */
   background-color: #a4133c;
   border-color: #a4133c;
   color: aliceblue;
+  transition: background-color ease-in-out;
 }
 
 .cart-container img {
   height: 30px;
   width: 20px;
+
 }
 
 /* CART AO LADO COM FUNDO BRANCO */
 .products-cart {
+
   background-color: rgb(255, 255, 255);
-  width: 50%;
+  flex: 1 1 1;
+  width: 100rem;
+
   height: 700px;
   border-style: double;
   border-color: #ff8fa3;
