@@ -1,10 +1,7 @@
-
-const App =()=>{
-  return(
+export default function App() {
+  return (
     <div className="App">
-    <a href="./about.html">About Page</a>
+      <h1>Hello World</h1>
     </div>
-  )
+  );
 }
-
-export default App
