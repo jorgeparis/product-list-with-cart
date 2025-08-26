@@ -1,18 +1,19 @@
-import "tailwindcss";
 import "./App.css";
-export default function App() {
+const message = "Hello Jorge";
+
+const App = (d) => {
   return (
     <>
       <div className="containr">
-        <ul className="lista">
-          <li text-3xl font-bold underline>
-            item 1
-          </li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <h1 class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">
+          Hello world!
+        </h1>
+        <h1 class="text-sm font-semibold">
+          Hello world!
+        </h1>
       </div>
     </>
   );
-}
+};
+
+export default App;
