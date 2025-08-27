@@ -21,6 +21,9 @@ const App = (d) => {
               alt="Tailwind Play"
             />
             <div className="space-y-6">
+              <span className="text-xl text-amber-500 hover:text-xl hover:text-amber-500/50">
+                &copy;
+              </span>
               <p>
                 An advanced online playground for Tailwind CSS, including
                 support for things like:
