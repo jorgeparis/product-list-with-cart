@@ -13,11 +13,11 @@ function Navbar() {
     alert("OLA");
   };
   return (
-    <div className="navbar w-screen h-[8rem] bg-[#e4e2e2] flex gap-[20rem] items-center justify-center">
+    <div className="navbar w-screen h-[150px] bg-[#e4e2e2] flex gap-[20rem] items-center justify-center sticky top-0 z-99">
       <div className="navbar-container">
         <ul className="text-[#222020] font-bold list-none flex items-center gap-4 cursor-pointer">
           <li
-            className="hover:text-[#f57591] hover:text-3xl"
+            className="hover:text-[#f57591] hover:text-3xl hover:gap-[20rem]"
             onClick={HandListItem}
           >
             Stations
