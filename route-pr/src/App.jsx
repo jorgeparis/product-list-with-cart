@@ -1,16 +1,11 @@
 import "./App.css";
-import Stations from "./pages/About/Stations.jsx";
-import Contact from "./pages/ContactUS/Contact.jsx";
-import News from "./pages/Home/News.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
 
 function App() {
   return (
-    <>
-      <h1>OLA</h1>
-      <News />
-      <Contact />
-      <Stations />
-    </>
+    <div className="container-main flex justify-center w-screen h-screen">
+      <Navbar />
+    </div>
   );
 }
 
