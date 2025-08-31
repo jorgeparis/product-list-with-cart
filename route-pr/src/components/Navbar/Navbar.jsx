@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <div className="navbar min-w-screen min-h-[8rem] bg-linear-65 from-purple-500 to-pink-500 flex gap-[20rem] items-center justify-center sticky top-0 z-99 shadow">
       <div className="navbar-container">
-        <ul className="text-[#ffffff] font-bold list-none flex items-center gap-4 cursor-pointer">
+        <ul className="text-[#ffffff] font-bold list-none flex items-center gap-4 cursor-pointer fixed">
           <NavLink to={"/"}>
             <li>Stations</li>
           </NavLink>
