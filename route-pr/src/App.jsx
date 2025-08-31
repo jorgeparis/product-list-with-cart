@@ -1,12 +1,21 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Stations from "./pages/About/Stations.jsx";
+import Navbar from "./components/Navbar/Navbar";
+import NotFound from "./components/NotFound/NotFound";
+import About from "./pages/About/About";
+import News from "./pages/News/News";
+import Stations from "./pages/Stations/Stations";
 
 function App() {
   return (
-    <div className="container-main flex flex-col w-screen h-screen items-center gap-[4rem]">
+    <div className="flex flex-col justify-center items-center gap-10 min-h-100vh w-screen">
       <Navbar />
-      <Stations />
+      <Routes>
+        <Route path="/" element={<Stations />} />
+        <Route path="/News" element={<News />} />
+        <Route path="/About" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
