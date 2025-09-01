@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #353131;
     border-radius: 1.5rem;
     width: 40rem;
     height: 40rem;
@@ -13,7 +12,7 @@
   
   /* Hide default audio controls */
   audio {
-    display: none;
+    
   }
   
   /* Style waveform */

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import AudioPlayer from "../../pages/Stations/AudioPlayer";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ function Navbar() {
         >
           Login
         </button>
+        <AudioPlayer src="https://c1.mirror.africa:8443/227" />
       </div>
     </div>
   );
