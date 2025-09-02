@@ -1,42 +1,56 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import AudioPlayer from "../../pages/Stations/AudioPlayer";
 
 function Navbar() {
-  const navigate = useNavigate();
-  const HandleSignIn = (e) => {
-    e.preventDefault();
-  };
-
-  const HandListItem = (e) => {
-    e.preventDefault();
+  const handleClick = (event) => {
+    event.preventDefault();
   };
   return (
-    <div className="navbar min-w-screen min-h-[8rem] bg-linear-65 from-purple-500 to-pink-500 flex gap-[20rem] items-center justify-center sticky top-0 z-99 shadow">
-      <div className="navbar-container">
-        <ul className="text-[#ffffff] font-bold list-none flex items-center gap-4 cursor-pointer fixed">
-          <NavLink to={"/"}>
-            <li>Stations</li>
-          </NavLink>
-          <NavLink to={"/News"}>
-            <li>News</li>
-          </NavLink>
-          <NavLink to={"/About"}>
-            <li>About</li>
-          </NavLink>
-        </ul>
-      </div>
-      <div className="login-button text-[#222020] font-bold">
-        <button
-          className="bg-[#222020] text-white rounded-[1rem] w-[6rem] h-[3rem] hover:w-[7rem] hover:h-[3rem] cursor-pointer hover:bg-amber-200 hover:text-[#000] hover:font-extrabold"
-          onClick={() => navigate("/", { replace: true })}
+    <>
+      <div
+        className="navbar text-[#fff] font-bold flex justify-between items-center bg-[#071126] gap-4 m-4 min-h-25 w-screen
+        pr-70 pl-70 
+      "
+      >
+        <div className="logo">
+          <h1 className="logo-text font-black text-3xl">
+            FM LAND{" "}
+            <span className="font-extrabold text-6xl text-[#f309d4]">.</span>
+          </h1>
+        </div>
+        <div className="navbar-categories">
+          <ul className="flex justify-center items-center gap-12 text-xl font-normal cursor-pointer">
+            <NavLink to="/">
+              {" "}
+              <li className="hover:text-[#66FCF1]">Home</li>
+            </NavLink>
+            <NavLink to="/About">
+              <li className="hover:text-[#66FCF1]">About Us</li>
+            </NavLink>
+            <NavLink to="/Radio Station">
+              <li className="hover:text-[#66FCF1]">Radio Station</li>
+            </NavLink>
+            <NavLink to="/Blog">
+              <li className="hover:text-[#66FCF1]">Blog</li>
+            </NavLink>
+            <NavLink to="/Pages">
+              <li className="hover:text-[#66FCF1]">Pages</li>
+            </NavLink>
+            <NavLink to="/Contact">
+              <li className="hover:text-[#66FCF1]">Contact</li>
+            </NavLink>
+          </ul>
+        </div>
+        <a
+          href=""
+          className="text-center flex items-center justify-center btn-sponsor bg-[#66FCF1] h-[3rem] w-[10rem] rounded-lg text-[#000]"
+          onClick={handleClick}
         >
-          Login
-        </button>
-        <AudioPlayer src="https://c1.mirror.africa:8443/227" />
+          Make Sponsor
+        </a>
       </div>
-    </div>
+    </>
   );
 }
 

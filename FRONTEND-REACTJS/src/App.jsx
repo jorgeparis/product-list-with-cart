@@ -1,22 +1,28 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import NotFound from "./components/NotFound/NotFound";
-import About from "./pages/About/About";
-import News from "./pages/News/News";
-import Stations from "./pages/Stations/Stations";
+import AboutUs from "./pages/AboutUS/AboutUs";
+import Blog from "./pages/Blog/Blog";
+import Contact from "./pages/Contact/Contact";
+import Home from "./pages/Home/Home";
+import Pages from "./pages/Pages/Pages";
+import RadioStation from "./pages/RadioStation/RadioStation";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center gap-10 min-h-100vh w-screen">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Stations />} />
-        <Route path="/News" element={<News />} />
-        <Route path="/About" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <>
+      <div className="main-container">
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/About" element={<AboutUs />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Radio Station" element={<RadioStation />} />
+          <Route path="/Pages" element={<Pages />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
