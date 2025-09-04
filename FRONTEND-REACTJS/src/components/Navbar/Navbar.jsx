@@ -12,9 +12,9 @@ function Navbar() {
   return (
     <>
       <div
-        className="navbar text-[#fff] font-bold flex justify-between items-center bg-[#071126] gap-4 m-4 min-h-[100px] w-full
-        px-[100px]
-        sticky top-0 z-50
+        className="navbar text-[#fff] font-bold flex justify-between items-center gap-4 m-4 min-h-[100px] w-full
+        px-[100px] bg-[#030407]
+        sticky top-0 z-50 opacity-70 backdrop-blur-lg
       "
       >
         <div className="logo">
@@ -24,7 +24,7 @@ function Navbar() {
               navigate("/", { replace: true });
             }}
           >
-            FM LAND
+            JORGE PARIS
             <span className="font-extrabold text-6xl text-[#f309d4]">.</span>
           </h1>
         </div>
@@ -65,7 +65,7 @@ function Navbar() {
            max-lg:hidden"
           onClick={handleClick}
         >
-          Make Sponsor
+          LOGIN
         </a>
         <div className="navbar-icons flex items-center justify-center md:hidden">
           {isOpen ? (
