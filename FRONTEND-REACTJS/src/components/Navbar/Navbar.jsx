@@ -1,26 +1,40 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
   };
   return (
     <>
       <div
-        className="navbar text-[#fff] font-bold flex justify-between items-center bg-[#071126] gap-4 m-4 min-h-25 w-screen
-        pr-70 pl-70 
+        className="navbar text-[#fff] font-bold flex justify-between items-center bg-[#071126] gap-4 m-4 min-h-[100px] w-full
+        px-[100px]
+        sticky top-0 z-50
       "
       >
         <div className="logo">
-          <h1 className="logo-text font-black text-3xl">
-            FM LAND{" "}
+          <h1
+            className="logo-text font-black text-3xl cursor-pointer max-lg:text-xl"
+            onClick={() => {
+              navigate("/", { replace: true });
+            }}
+          >
+            FM LAND
             <span className="font-extrabold text-6xl text-[#f309d4]">.</span>
           </h1>
         </div>
         <div className="navbar-categories">
-          <ul className="flex justify-center items-center gap-12 text-xl font-normal cursor-pointer">
+          <ul
+            className="flex justify-center items-center gap-12 text-xl font-normal cursor-pointer 
+          max-lg:flex-col max-lg:justify-center max-lg:items-start max-lg:gap-6 max-lg:text-base
+          max-lg:hidden
+          "
+          >
             <NavLink to="/">
               {" "}
               <li className="hover:text-[#66FCF1]">Home</li>
@@ -44,11 +58,30 @@ function Navbar() {
         </div>
         <a
           href=""
-          className="text-center flex items-center justify-center btn-sponsor bg-[#66FCF1] h-[3rem] w-[10rem] rounded-lg text-[#000]"
+          className="text-center flex items-center justify-center 
+          btn-sponsor bg-[#66FCF1] hover:text-[#feffff]
+           hover:bg-[#66FCF1]/70 h-[3rem] w-[10rem] 
+           rounded-lg text-[#000]
+           max-lg:hidden"
           onClick={handleClick}
         >
           Make Sponsor
         </a>
+        <div className="navbar-icons flex items-center justify-center md:hidden">
+          {isOpen ? (
+            <X
+              size={30}
+              className="cursor-pointer text-[#ffffff]"
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          ) : (
+            <Menu
+              size={30}
+              className="cursor-pointer text-[#ffffff]"
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          )}
+        </div>
       </div>
     </>
   );
