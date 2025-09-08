@@ -1,8 +1,8 @@
+import { useState } from "react";
 import Player from "../../components/Player/Player";
 import "./Home.css";
-import { useRef, useState } from "react";
 const Home = () => {
-  const [isOnair, setOnair]= useState(false);
+  const [isOnair, setOnair] = useState(false);
   return (
     <div className="container-home min-w-screen min-h-screen bg-[#030916] flex flex-col items-center justify-center gap-6">
       <div
@@ -30,14 +30,20 @@ const Home = () => {
         hover:bg-[#f10a1eef]/70 h-[3rem] w-[10rem] 
           rounded-lg text-[#fff]
           max-lg:hidden py-2"
-          onClick={()=>{
+          onClick={() => {
             setOnair(!isOnair);
           }}
         >
           SHOW STATIONS
         </a>
       </div>
-      <div className={` ${isOnair ? "player-container min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1" : "hidden"}`}>
+      <div
+        className={` ${
+          isOnair
+            ? "player-container min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1"
+            : "hidden"
+        }`}
+      >
         <Player
           radioId={"Radio Maria 103.1 MHz"}
           src="https://dreamsiteradiocp2.com/proxy/rmmozambique2?mp=/stream"
@@ -58,6 +64,10 @@ const Home = () => {
         <Player
           radioId={"Radio Mocambique-GAZA"}
           src="https://node.stream-africa.com:8443/Gaza"
+        />
+        <Player
+          radioId={"LM RADIO"}
+          src="https://cast6.asurahosting.com/proxy/lmradioc/stream"
         />
       </div>
       <div className="player min-h-[600px] min-w-[50%] bg-[#da0707] flex flex-col justify-center items-center rounded-lg"></div>
