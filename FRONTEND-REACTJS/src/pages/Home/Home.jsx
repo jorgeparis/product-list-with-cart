@@ -10,13 +10,13 @@ const Home = () => {
       "
       >
         <h2 className="text-center text-[#66FCF1] font-bold text-2xl">
-          Live Music
+          YOUR BEST RADIO STATION
         </h2>
         <h1 className="text-center text-[#ffffff] font-bold text-7xl">
-          Best Radio Station
+          Best Radio Stations
         </h1>
         <h1 className="text-center text-[#ffffff] font-bold text-7xl">
-          In A Place
+          In one <span className="text-[#f30909]">Place</span>
         </h1>
         <p className="text-amber-50">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -33,11 +33,23 @@ const Home = () => {
         </a>
       </div>
       <div className="player min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1">
-        <Player radioId={"Radio 1 103.1 MHz"} />
-        <Player radioId={"Radio 2 88.9 MHZ"} />
-        <Player radioId={"Radio 3 90.4 MHz"} />
-        <Player radioId={"Radio 4 100.5 MHz"} />
-        <Player radioId={"Radio 6 99FM"} />
+        <Player
+          radioId={"Radio 1 103.1 MHz"}
+          src="https://dreamsiteradiocp2.com/proxy/rmmozambique2?mp=/stream"
+        />
+        <Player
+          radioId={"RM ANTENA NACIONAL"}
+          src="https://node.stream-africa.com:8443/AntenaNacional"
+        />
+        <Player
+          radioId={"Radio Maria Papua New Guinea"}
+          src="https://dreamsiteradiocp2.com/proxy/rmpapua2?mp=/stream"
+        />
+        <Player
+          radioId={"Radio Miramar"}
+          src="https://nl.digitalrm.pt:8150/stream"
+        />
+        <Player radioId={"SUPER RM"} src="https://c1.mirror.africa:8443/227" />
         <Player radioId={"Radio 6 99FM"} />
       </div>
       <div className="player min-h-[600px] min-w-[50%] bg-[#da0707] flex flex-col justify-center items-center rounded-lg"></div>
