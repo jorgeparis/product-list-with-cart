@@ -1,4 +1,11 @@
-import { Play, SkipBack, SkipForward, Square } from "lucide-react";
+import {
+  Play,
+  SkipBack,
+  SkipForward,
+  Square,
+  Volume2,
+  VolumeOff
+} from "lucide-react";
 import React, { useRef, useState } from "react";
 import "./Player.css";
 
@@ -71,6 +78,41 @@ const Player = (props) => {
               Offline
             </a>
           )}
+          <div className="volume-controller">
+            {isPlaying ? (
+              <div className="volume-controller-container flex gap-5 items-center justify-center">
+                <Volume2
+                  className="text-[#ff0054] hover:text-[##e93407]/40 font-light"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    audioRef.current.pause();
+                    setIsPlaying(!isPlaying);
+                  }}
+                />
+                <input
+                  type="range"
+                  name="volume"
+                  min="0"
+                  max="1"
+                  step="0.15"
+                  className="slider w-full h-2 accent-[#ff0054] rounded-lg cursor-pointer hover:accent-[#ff0054]"
+                  id="volume"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    audioRef.current.volume = event.target.value;
+                  }}
+                />
+              </div>
+            ) : (
+              <VolumeOff
+                onClick={(event) => {
+                  event.preventDefault();
+                  audioRef.current.play();
+                  setIsPlaying(!isPlaying);
+                }}
+              />
+            )}
+          </div>
 
           <audio ref={audioRef}>
             <source src={props.src} type="audio/mpeg" />
