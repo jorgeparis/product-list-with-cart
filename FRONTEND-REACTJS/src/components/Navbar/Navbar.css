@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 a.active {
-  color: #66fcf1;
+  color: #ffffff;
+  background-color: #ff0000;
+  width: 8rem;
+  height: 2rem;
+  text-align: center;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
 .logo-text {

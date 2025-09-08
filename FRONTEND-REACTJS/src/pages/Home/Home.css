@@ -1,0 +1,15 @@
+.player-container {
+    transition: all 0.3s ease; /* Smooth transition for visibility */
+  }
+  
+  .player {
+    transition: all 0.3s ease; /* Smooth reordering animation */
+  }
+  
+  .player-container.hidden {
+    display: none;
+  }
+  
+  .player-container .player {
+    margin-bottom: 8px; /* Space between players */
+  }
