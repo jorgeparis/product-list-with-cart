@@ -1,10 +1,12 @@
+import Player from "../../components/Player/Player";
+
 const Home = () => {
   return (
-    <div className="container-home min-w-screen min-h-screen bg-[#030916] flex">
+    <div className="container-home min-w-screen min-h-screen bg-[#030916] flex flex-col items-center justify-center gap-6">
       <div
         className="hero-container min-w-screen min-h-[550px] flex flex-col justify-center bg-cover bg-center 
         bg-[linear-gradient(to_right,#66FCF1,#66fcf1),url('../../assets/background-1.jpg')]
-        bg-blend-multiply items-start px-[100px] m-0 gap-1 fixed top-0
+        bg-blend-multiply items-start px-[100px] gap-9
       "
       >
         <h2 className="text-center text-[#66FCF1] font-bold text-2xl">
@@ -30,26 +32,15 @@ const Home = () => {
           ON AIR
         </a>
       </div>
-      <div className="player max-h-screen min-w-screen bg-[#ffffff] flex flex-col justify-center items-center">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
-          sapiente harum consequatur nesciunt cum et delectus enim dicta eaque
-          provident ex ea, ad vero? Nulla reprehenderit asperiores quas numquam
-          magni.
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
-          sapiente harum consequatur nesciunt cum et delectus enim dicta eaque
-          provident ex ea, ad vero? Nulla reprehenderit asperiores quas numquam
-          magni.
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
-          sapiente harum consequatur nesciunt cum et delectus enim dicta eaque
-          provident ex ea, ad vero? Nulla reprehenderit asperiores quas numquam
-          magni.
-        </p>
+      <div className="player min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1">
+        <Player radioId={"Radio 1 103.1 MHz"} />
+        <Player radioId={"Radio 2 88.9 MHZ"} />
+        <Player radioId={"Radio 3 90.4 MHz"} />
+        <Player radioId={"Radio 4 100.5 MHz"} />
+        <Player radioId={"Radio 6 99FM"} />
+        <Player radioId={"Radio 6 99FM"} />
       </div>
+      <div className="player min-h-[600px] min-w-[50%] bg-[#da0707] flex flex-col justify-center items-center rounded-lg"></div>
     </div>
   );
 };

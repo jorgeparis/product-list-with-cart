@@ -14,7 +14,7 @@ function Navbar() {
       <div
         className="navbar text-[#fff] font-bold flex justify-between items-center gap-4 m-4 min-h-[100px] w-full
         px-[100px] bg-[#030407]
-        sticky top-0 z-50 opacity-70 backdrop-blur-lg
+        opacity-70 backdrop-blur-lg
       "
       >
         <div className="logo">

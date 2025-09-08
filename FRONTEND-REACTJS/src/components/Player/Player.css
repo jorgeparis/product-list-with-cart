@@ -1,0 +1,15 @@
+.onair {
+  animation: blink 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 5s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
