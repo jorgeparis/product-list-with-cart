@@ -1,6 +1,8 @@
 import Player from "../../components/Player/Player";
-
+import "./Home.css";
+import { useRef, useState } from "react";
 const Home = () => {
+  const [isOnair, setOnair]= useState(false);
   return (
     <div className="container-home min-w-screen min-h-screen bg-[#030916] flex flex-col items-center justify-center gap-6">
       <div
@@ -10,7 +12,7 @@ const Home = () => {
       "
       >
         <h2 className="text-center text-[#66FCF1] font-bold text-2xl">
-          YOUR BEST RADIO STATION
+          YOUR BEST RADIO STATIONS
         </h2>
         <h1 className="text-center text-[#ffffff] font-bold text-7xl">
           Best Radio Stations
@@ -28,13 +30,16 @@ const Home = () => {
         hover:bg-[#f10a1eef]/70 h-[3rem] w-[10rem] 
           rounded-lg text-[#fff]
           max-lg:hidden py-2"
+          onClick={()=>{
+            setOnair(!isOnair);
+          }}
         >
-          ON AIR
+          SHOW STATIONS
         </a>
       </div>
-      <div className="player min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1">
+      <div className={` ${isOnair ? "player-container min-h-auto max-w-[50%] bg-[#f8ecec] rounded-lg flex flex-col gap-1" : "hidden"}`}>
         <Player
-          radioId={"Radio 1 103.1 MHz"}
+          radioId={"Radio Maria 103.1 MHz"}
           src="https://dreamsiteradiocp2.com/proxy/rmmozambique2?mp=/stream"
         />
         <Player
@@ -50,7 +55,10 @@ const Home = () => {
           src="https://nl.digitalrm.pt:8150/stream"
         />
         <Player radioId={"SUPER RM"} src="https://c1.mirror.africa:8443/227" />
-        <Player radioId={"Radio 6 99FM"} />
+        <Player
+          radioId={"Radio Mocambique-GAZA"}
+          src="https://node.stream-africa.com:8443/Gaza"
+        />
       </div>
       <div className="player min-h-[600px] min-w-[50%] bg-[#da0707] flex flex-col justify-center items-center rounded-lg"></div>
     </div>

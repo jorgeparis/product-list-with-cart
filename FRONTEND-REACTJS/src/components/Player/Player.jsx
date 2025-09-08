@@ -43,7 +43,7 @@ const Player = (props) => {
       </div>
       <div className="container-radio flex flex-col gap-3 items-start w-[800px] max-h-[100px] bg-[#e0d8d8] px-4 py-4 rounded-lg shadow backdrop-blur-3xl">
         <div className="radio-id flex gap-8 items-center justify-between max-w-[800px] h-[100px]">
-          <h2 className="radio-id text-xl font-bold text-[#072c29] hover:text-[#5ca2f1]">
+          <h2 className="radio-id text-xl font-light text-[#072c29] hover:text-[#5ca2f1]">
             {props.radioId}
           </h2>
 
@@ -74,10 +74,10 @@ const Player = (props) => {
           </audio>
         </div>
         <div className="player-controls flex gap-1.5 items-start">
-          <SkipBack className="text-[#e93407] hover:text-[##e93407]/40 shadow backdrop-blur-lg" />
+          <SkipBack className="text-[#e93407] hover:text-[##e93407]/40 shadow backdrop-blur-lg font-light" />
           {isPlaying ? (
             <Square
-              className="text-[#e93407] hover:text-[##e93407]/40"
+              className="text-[#e93407] hover:text-[##e93407]/40 font-light"
               onClick={() => {
                 stop();
                 setIsPlaying(!isPlaying);
