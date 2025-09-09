@@ -15,7 +15,7 @@ const Player = (props) => {
 
   const play = () => {
     audioRef.current.play();
-    audioRef.current.volume = 1.0;
+    audioRef.current.volume = 0.3;
   };
 
   const stop = () => {
@@ -32,7 +32,7 @@ const Player = (props) => {
         setTimeout(fadeOut, fadeOutInterval);
       } else {
         audioRef.current.pause();
-        audioRef.current.volume = 1.0; // Reset volume for next play
+        audioRef.current.volume = 1.0;
       }
     };
 
@@ -68,7 +68,7 @@ const Player = (props) => {
           ) : (
             <a
               href="#"
-              className="onair bg-[#000000] text-white rounded-4xl px-4 py-2 font-bold text-center"
+              className="off-onair bg-[#000000] text-white rounded-4xl px-4 py-2 font-bold text-center"
               onClick={(event) => {
                 event.preventDefault();
                 audioRef.current.play();
@@ -83,6 +83,7 @@ const Player = (props) => {
               <div className="volume-controller-container flex gap-5 items-center justify-center">
                 <Volume2
                   className="text-[#ff0054] hover:text-[##e93407]/40 font-light"
+                  size={35}
                   onClick={(event) => {
                     event.preventDefault();
                     audioRef.current.pause();
@@ -105,6 +106,7 @@ const Player = (props) => {
               </div>
             ) : (
               <VolumeOff
+                size={25}
                 onClick={(event) => {
                   event.preventDefault();
                   audioRef.current.play();
@@ -119,7 +121,7 @@ const Player = (props) => {
           </audio>
         </div>
         <div className="player-controls flex gap-1.5 items-start">
-          <SkipBack className="text-[#ff0054] hover:text-[##e93407]/40 font-light" />
+          <SkipBack className="text-[#ff0054] hover:text-[##e93407]/40" />
           {isPlaying ? (
             <Square
               className="text-[#ff0054] hover:text-[##e93407]/40 font-light"

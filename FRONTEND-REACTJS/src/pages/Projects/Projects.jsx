@@ -1,7 +1,8 @@
 import React from "react";
+import { replace, useNavigate } from "react-router-dom";
 
-
-const RadioStation = () => {
+const Projects = () => {
+  const navigate=useNavigate();
   return (
     <div className="container-home min-w-screen min-h-screen bg-[#030916] flex">
       <div
@@ -29,8 +30,9 @@ const RadioStation = () => {
       hover:bg-[#f10a1eef]/70 h-[3rem] w-[10rem] 
         rounded-lg text-[#fff]
         max-lg:hidden py-2"
+        onClick={(event)=>{navigate("/")}}
         >
-          ON AIR
+          GO BACK 
         </a>
       </div>
       <div className="player max-h-screen min-w-screen bg-[#ffffff] flex flex-col justify-center items-center">
@@ -57,4 +59,4 @@ const RadioStation = () => {
   );
 };
 
-export default RadioStation;
+export default Projects;
