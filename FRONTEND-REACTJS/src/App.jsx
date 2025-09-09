@@ -22,6 +22,11 @@ function App() {
           <Route path="/Technical Support" element={<TechnicalSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <footer className="footer-container min-w-screen min-h-[100px] bg-[#030916] flex items-center bottom-0 gap-2 px-100">
+        <p className="text-center text-[#ffffff] text-sm">
+          Copyright © 2025 JORGE PARIS. All rights reserved.
+        </p>
+      </footer>
       </div>
     </>
   );

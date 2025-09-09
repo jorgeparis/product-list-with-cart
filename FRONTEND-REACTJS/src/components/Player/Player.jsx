@@ -15,7 +15,7 @@ const Player = (props) => {
 
   const play = () => {
     audioRef.current.play();
-    audioRef.current.volume = 0.3;
+    audioRef.current.volume = 1.0;
   };
 
   const stop = () => {
@@ -39,92 +39,100 @@ const Player = (props) => {
     fadeOut();
   };
   return (
-    <div className="player-container p-5 min-w-auto min-h-auto flex items-center gap-4">
+    <div className="player-container p-5 min-w-[50%] min-h-[50%] flex flex-col items-center justify-center gap-3">
       <div className="radio-logo-container max-h-[80px] w-[80px] rounded-full">
         <img
           src={props.background}
           alt="LOGO"
-          className="logo rounded-4xl hover:scale-106 max-h-[80px] w-[80px] rounded-full bg-cover"
+          className="logo hover:scale-150 max-h-[80px] w-[80px] rounded-full bg-cover"
         />
       </div>
-      <div className="container-radio flex flex-col gap-3 items-start w-[800px] max-h-[100px] bg-[#fcf3f3] px-4 py-4 rounded-lg shadow backdrop-blur-5xl">
-        <div className="radio-id flex gap-8 items-center justify-between max-w-[800px] h-[100px]">
-          <h2 className="radio-id text-xl font-light text-[#072c29] hover:text-[#5ca2f1]">
-            {props.radioId}
-          </h2>
 
+      <div className="live-indicator-volume flex gap-4 items-center justify-center min-w-[300px] h-[80px]">
+        {isPlaying ? (
+          <a
+            href="#"
+            className="onair bg-[#d00000] text-white rounded-4xl px-4 py-2 font-bold text-center"
+            onClick={(event) => {
+              event.preventDefault();
+              audioRef.current.pause();
+              setIsPlaying(!isPlaying);
+            }}
+          >
+            Live
+          </a>
+        ) : (
+          <a
+            href="#"
+            className="off-onair bg-[#000000] text-white rounded-4xl px-4 py-2 font-bold text-center"
+            onClick={(event) => {
+              event.preventDefault();
+              audioRef.current.play();
+              setIsPlaying(!isPlaying);
+            }}
+          >
+            Offline
+          </a>
+        )}
+        <div className="volume-controller">
           {isPlaying ? (
-            <a
-              href="#"
-              className="onair bg-[#d00000] text-white rounded-4xl px-4 py-2 font-bold text-center"
-              onClick={(event) => {
-                event.preventDefault();
-                audioRef.current.pause();
-                setIsPlaying(!isPlaying);
-              }}
-            >
-              Live
-            </a>
+            <div className="volume-controller-container flex gap-5 items-center justify-center">
+              <Volume2
+                className="text-[#ff0054] hover:text-[##e93407]/40 font-light"
+                size={35}
+                onClick={(event) => {
+                  event.preventDefault();
+                  audioRef.current.pause();
+                  setIsPlaying(!isPlaying);
+                }}
+              />
+              <input
+                type="range"
+                name="volume"
+                min="0"
+                max="1"
+                step="0.1"
+                className="slider w-full h-2 accent-[#ff0054] rounded-lg cursor-pointer hover:accent-[#ff0054]"
+                id="volume"
+                onClick={(event) => {
+                  event.preventDefault();
+                  audioRef.current.volume = event.target.value;
+                }}
+              />
+            </div>
           ) : (
-            <a
-              href="#"
-              className="off-onair bg-[#000000] text-white rounded-4xl px-4 py-2 font-bold text-center"
+            <VolumeOff
+              size={25}
               onClick={(event) => {
                 event.preventDefault();
                 audioRef.current.play();
                 setIsPlaying(!isPlaying);
               }}
-            >
-              Offline
-            </a>
+            />
           )}
-          <div className="volume-controller">
-            {isPlaying ? (
-              <div className="volume-controller-container flex gap-5 items-center justify-center">
-                <Volume2
-                  className="text-[#ff0054] hover:text-[##e93407]/40 font-light"
-                  size={35}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    audioRef.current.pause();
-                    setIsPlaying(!isPlaying);
-                  }}
-                />
-                <input
-                  type="range"
-                  name="volume"
-                  min="0"
-                  max="1"
-                  step="0.15"
-                  className="slider w-full h-2 accent-[#ff0054] rounded-lg cursor-pointer hover:accent-[#ff0054]"
-                  id="volume"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    audioRef.current.volume = event.target.value;
-                  }}
-                />
-              </div>
-            ) : (
-              <VolumeOff
-                size={25}
-                onClick={(event) => {
-                  event.preventDefault();
-                  audioRef.current.play();
-                  setIsPlaying(!isPlaying);
-                }}
-              />
-            )}
-          </div>
-
-          <audio ref={audioRef}>
-            <source src={props.src} type="audio/mpeg" />
-          </audio>
         </div>
-        <div className="player-controls flex gap-1.5 items-start">
-          <SkipBack className="text-[#ff0054] hover:text-[##e93407]/40" />
+      </div>
+      <div
+        className={
+          isPlaying
+            ? "container-radio flex flex-col min-w-[80%] max-h-[550px] bg-[#fd0000] px-4 py-4 rounded-lg shadow backdrop-blur-5xl items-center justify-center"
+            : "container-radio flex flex-col min-w-[80%] max-h-[550px] bg-[#fcf3f3] px-4 py-4 rounded-lg shadow backdrop-blur-5xl items-center justify-center"
+        }
+      >
+        <div className="radio-id flex items-center justify-center max-w-[500px] min-h-[130px]">
+          <h2 className="radio-id text-xl font-bold text-[#000000] hover:text-[#ffffff]">
+            {props.radioId}
+          </h2>
+        </div>
+
+        <audio ref={audioRef}>
+          <source src={props.src} type="audio/mpeg" />
+        </audio>
+        <div className="player-controls flex gap-1.5 items-center justify-center">
+          <SkipBack className="text-[#ffffff] hover:text-[##e93407]/40" />
           {isPlaying ? (
             <Square
-              className="text-[#ff0054] hover:text-[##e93407]/40 font-light"
+              className="text-[#ffffff] hover:text-[##e93407]/40 font-light"
               onClick={() => {
                 stop();
                 setIsPlaying(!isPlaying);
@@ -132,14 +140,14 @@ const Player = (props) => {
             />
           ) : (
             <Play
-              className="text-[#ff0054] hover:text-[#00a6fb]/40"
+              className="text-[#ffffff] hover:text-[#ffffff]"
               onClick={() => {
                 play();
                 setIsPlaying(!isPlaying);
               }}
             />
           )}
-          <SkipForward className="text-[#ff0054] hover:text-[##e93407]/40" />
+          <SkipForward className="text-[#ffffff] hover:text-[##e93407]/40" />
         </div>
       </div>
     </div>
